@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n<meta name="theme-color" content="#14213d">
+<title>Тренажёр по русскому языку</title>
+<style>
+:root{--ink:#14213d;--muted:#657089;--paper:#fffdf8;--line:#dfe4ea;--accent:#e85d3f;--accent-dark:#b93622;--good:#16835b;--good-bg:#eaf8f1;--bad:#c33c32;--bad-bg:#fff0ee;--blue:#315fa8;--shadow:0 18px 55px rgba(20,33,61,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2efe8;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.5}.home{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 15% 10%,#ffd9ca 0,transparent 32%),radial-gradient(circle at 85% 90%,#cfe3df 0,transparent 35%),#f5f1e8}.home-card{width:min(1050px,100%);background:rgba(255,253,248,.94);padding:clamp(28px,5vw,70px);border:1px solid rgba(20,33,61,.1);border-radius:30px;box-shadow:var(--shadow)}.eyebrow{margin:0 0 12px;color:var(--accent-dark);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1{font-family:Georgia,serif;font-size:clamp(2.3rem,6vw,5rem);line-height:.98;margin:0 0 22px;max-width:800px}.lead{font-size:1.08rem;color:var(--muted);max-width:700px}.variant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 26px}.variant-link{min-height:190px;padding:23px;border-radius:20px;text-decoration:none;color:white;display:flex;flex-direction:column;justify-content:space-between;transition:.2s transform,.2s box-shadow}.variant-link:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,33,61,.18)}.variant-link span{font-size:.77rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;opacity:.8}.variant-link strong{font-family:Georgia,serif;font-size:1.45rem;line-height:1.08}.variant-link small{opacity:.82}.coral{background:#d9553c}.blue{background:#315fa8}.green{background:#23765c}.source-note{color:var(--muted);font-size:.82rem;margin-bottom:0}
+.test-page{background:linear-gradient(90deg,#f4f0e8 0,#f4f0e8 68%,#ebe7df 68%);min-height:100vh}.topbar{background:var(--ink);color:white;padding:14px 24px}.topbar-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px}.back{color:white;text-decoration:none;font-weight:700}.timer{font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:.05em}.layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 300px;gap:42px;padding:46px 22px 80px}.intro{margin-bottom:30px}.intro h1{font-size:clamp(2.2rem,5vw,4.3rem);margin-bottom:14px}.intro p{color:var(--muted);max-width:650px}.question{background:var(--paper);border:1px solid rgba(20,33,61,.11);border-radius:20px;padding:25px;margin:0 0 18px;box-shadow:0 6px 22px rgba(20,33,61,.05);scroll-margin-top:18px}.question.answered{border-color:#c8d2d0}.q-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:13px}.q-number{font-weight:900;font-size:1.05rem}.topic{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#eaf0fb;border-radius:999px;padding:6px 10px}.prompt{font-family:Georgia,serif;font-size:1.13rem;font-weight:700;white-space:pre-line;margin:0 0 17px}.options{display:grid;gap:9px}.option{position:relative;display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:13px;padding:12px 14px;cursor:pointer;background:white;transition:.15s}.option:hover{border-color:#9ba8b7;background:#fafbfc}.option input{margin-top:4px;accent-color:var(--accent)}.option.correct{border-color:var(--good);background:var(--good-bg);color:#0e6847}.option.wrong{border-color:var(--bad);background:var(--bad-bg);color:#9f2b24}.option.locked{cursor:default}.feedback{display:none;margin:14px 0 0;padding:11px 13px;border-radius:11px;font-size:.92rem}.feedback.show{display:block}.feedback.good{background:var(--good-bg);color:#0e6847}.feedback.bad{background:var(--bad-bg);color:#922d26}.score-card{position:sticky;top:24px;background:var(--ink);color:white;border-radius:22px;padding:23px;box-shadow:var(--shadow)}.score-label{font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;opacity:.68}.score-big{font-family:Georgia,serif;font-size:3rem;line-height:1;margin:12px 0}.score-big span{color:#ffb09c}.progress-track{height:7px;background:rgba(255,255,255,.16);border-radius:10px;overflow:hidden;margin:18px 0 10px}.progress-bar{height:100%;width:0;background:#ff9175;transition:.25s}.score-meta{font-size:.88rem;opacity:.78}.result{display:none;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2)}.result.show{display:block}.result strong{display:block;font-family:Georgia,serif;font-size:1.35rem;margin-bottom:4px}.reset{width:100%;border:0;border-radius:12px;padding:12px;margin-top:18px;background:white;color:var(--ink);font-weight:800;cursor:pointer}.reset:hover{background:#f0ede6}.legend{margin-top:18px;font-size:.8rem;opacity:.72}.legend div{margin-top:6px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}.dot.good{background:#59d6a5}.dot.bad{background:#ff786e}.footer-note{color:var(--muted);font-size:.82rem;margin:26px 0 0}.noscript{max-width:800px;margin:30px auto;padding:20px;background:#fff0ee;color:#922d26;border-radius:12px}
+@media(max-width:850px){.variant-grid{grid-template-columns:1fr}.variant-link{min-height:145px}.test-page{background:#f4f0e8}.layout{grid-template-columns:1fr;padding-top:25px}.sidebar{position:fixed;z-index:10;right:12px;bottom:12px}.score-card{position:static;width:190px;padding:14px;border-radius:16px}.score-label,.progress-track,.score-meta,.result,.reset,.legend{display:none!important}.score-big{font-size:1.5rem;margin:4px 0}.topbar{padding:12px 15px}.question{padding:19px}.topic{font-size:.65rem}.prompt{font-size:1.04rem}}
+
+
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.hidden{display:none!important}.variant-link{border:0;text-align:left;cursor:pointer;width:100%}#test-view{min-height:100vh}.home{padding:28px}.link-button{border:0;background:transparent;padding:0;cursor:pointer;font:inherit}
+</style>
+</head>
+<body>
+<section id="home-view" class="home">
+<main class="home-card">
+<p class="eyebrow">РГЭУ (РИНХ) · 2026</p>
+<h1>Тренажёр по русскому языку</h1>
+<p class="lead">Три интерактивных варианта по 25 заданий. Всё находится внутри одного HTML-файла и работает без интернета.</p>
+<div class="variant-grid">
+<button class="variant-link coral" data-start="0"><span>Вариант 01</span><strong>Орфография и нормы</strong><small>25 вопросов · 60 минут</small></button>
+<button class="variant-link blue" data-start="1"><span>Вариант 02</span><strong>Синтаксис и пунктуация</strong><small>25 вопросов · 60 минут</small></button>
+<button class="variant-link green" data-start="2"><span>Вариант 03</span><strong>Комплексная практика</strong><small>25 вопросов · 60 минут</small></button>
+</div>
+<p class="source-note">Составлено по программе вступительного испытания РГЭУ (РИНХ) и открытым материалам ФИПИ ЕГЭ 2025–2026.</p>
+</main>
+</section>
+<section id="test-view" class="test-page hidden">
+<header class="topbar"><div class="topbar-inner"><button class="back link-button" id="back-home">← Все варианты</button><span>Время: <span class="timer" id="timer">00:00</span></span></div></header>
+<main class="layout"><section><div class="intro"><p class="eyebrow">Интерактивный тест</p><h1 id="variant-title"></h1><p id="variant-subtitle"></p></div><div id="questions"></div><p class="footer-note">Учебный тренажёр. Формулировки являются авторскими и не воспроизводят реальный экзаменационный вариант.</p></section>
+<aside class="sidebar"><div class="score-card"><div class="score-label">Текущий результат</div><div class="score-big"><span id="correct">0</span> / <span id="total">25</span></div><div class="progress-track"><div class="progress-bar" id="progress"></div></div><div class="score-meta">Отвечено: <b id="answered">0</b> из <b id="answered-total">25</b></div><div class="result" id="result"><strong></strong><span></span></div><button class="reset" id="reset">Начать заново</button><div class="legend"><div><i class="dot good"></i>правильный ответ</div><div><i class="dot bad"></i>ваш неверный ответ</div></div></div></aside></main>
+</section>
+<noscript><p class="noscript">Для работы теста необходимо включить JavaScript.</p></noscript>
+<script>
+window.ALL_TESTS=[];
+window.ALL_TESTS.push({
+ title:'Вариант 01',
+ subtitle:'Орфография, языковые нормы и базовая пунктуация. 25 заданий в формате выбора одного ответа.',
+ questions:[
+  {topic:'Орфография',prompt:'В каком слове пропущена проверяемая безударная гласная корня?',options:['з..рница','уд..вляться','пл..вец','выск..чить'],answer:1,note:'Удивляться — проверочное слово «диво». В остальных случаях действуют правила чередования или исключения.'},
+  {topic:'Приставки',prompt:'В каком слове пишется приставка ПРЕ-?',options:['пр..клеить','пр..ехать','пр..одолеть','пр..школьный'],answer:2,note:'Преодолеть пишется с ПРЕ-. В остальных словах — ПРИ-.'},
+  {topic:'Суффиксы',prompt:'Укажите слово, написанное правильно.',options:['доверчевый','застенчивый','эмаливый','усидчевый'],answer:1,note:'В слове «застенчивый» пишется суффикс -чив-. Суффиксов -чев- и -ив- в приведённых формах нет.'},
+  {topic:'Н и НН',prompt:'В каком слове пишется НН?',options:['ветре..ый день','кожа..ый ремень','стекля..ая ваза','ю..ый спортсмен'],answer:2,note:'Стеклянный — слово-исключение с НН: стеклянный, оловянный, деревянный.'},
+  {topic:'НЕ и НИ',prompt:'В каком случае НЕ пишется со словом слитно?',options:['(не)навидеть ложь','далеко (не)лёгкий путь','(не)высокий, а низкий дом','(не)прочитанная мною книга'],answer:0,note:'«Ненавидеть» без НЕ не употребляется. В остальных примерах требуется раздельное написание.'},
+  {topic:'НЕ с наречиями',prompt:'В каком предложении НЕ со словом пишется слитно?',options:['Он говорил (не)громко, а почти шёпотом.','Он ответил (не)громко, то есть тихо.','Вовсе (не)громко прозвучал сигнал.','Он говорил далеко (не)громко.'],answer:1,note:'«Негромко» можно заменить синонимом «тихо»; противопоставления и усилителей отрицания нет.'},
+  {topic:'Глагол',prompt:'Укажите форму глагола, написанную правильно.',options:['они строют','они борятся','они клеют','они борются'],answer:3,note:'Бороться — глагол I спряжения: они борются.'},
+  {topic:'Причастие',prompt:'В каком слове верно написан суффикс причастия?',options:['увиденный','зависемый','слышамый','клеющийся (от «клеить»)'],answer:0,note:'От глагола «увидеть» образуется причастие «увиденный». Правильно: зависимый, слышимый, клеящийся.'},
+  {topic:'Орфоэпия',prompt:'В каком слове ударение указано верно?',options:['звОнит','красивЕйший','облЕгчить','каталОг'],answer:3,note:'Правильно: каталОг. Также: звонИт, красИвейший, облегчИть.'},
+  {topic:'Паронимы',prompt:'В каком предложении пароним употреблён правильно?',options:['Предоставьте слово докладчику.','Мама одела пальто.','Это был очень эффектный способ лечения.','Нужно оплатить за проезд.'],answer:0,note:'Слово докладчику предоставляют. Пальто надевают; способ бывает эффективным; проезд оплачивают.'},
+  {topic:'Морфология',prompt:'Укажите грамматически правильную форму.',options:['более лучше','пять килограммов','двое девушек','ихний проект'],answer:1,note:'Нормативная форма — «пять килограммов». Остальные варианты нарушают морфологические нормы.'},
+  {topic:'Управление',prompt:'В каком сочетании падежная форма употреблена правильно?',options:['по приезду в город','согласно приказа','вопреки прогнозу','благодаря поддержки'],answer:2,note:'Предлог «вопреки» требует дательного падежа: вопреки прогнозу. Правильно также: по приезде, согласно приказу, благодаря поддержке.'},
+  {topic:'Грамматика',prompt:'Укажите грамматически правильное предложение.',options:['Подъезжая к станции, у меня слетела шляпа.','Прочитав роман, мне стало грустно.','Благодаря поддержке друзей мы завершили проект.','По окончанию школы он поступил в вуз.'],answer:2,note:'Деепричастие должно относиться к действующему подлежащему. Нормативно: по окончании школы.'},
+  {topic:'Пунктуация',prompt:'В каком предложении знаки препинания расставлены верно?',options:['И смех и горе сопровождали героя.','И смех, и горе сопровождали героя.','И смех и, горе сопровождали героя.','И, смех, и горе сопровождали героя.'],answer:1,note:'При повторяющемся союзе И между однородными членами ставится запятая.'},
+  {topic:'Вводные слова',prompt:'Где знаки препинания расставлены правильно?',options:['По словам синоптика завтра потеплеет.','По словам, синоптика завтра потеплеет.','По словам синоптика, завтра потеплеет.','По, словам синоптика, завтра потеплеет.'],answer:2,note:'Оборот «по словам синоптика» имеет значение источника сообщения и обособляется.'},
+  {topic:'Обособление',prompt:'Укажите правильный вариант пунктуации.',options:['Книга прочитанная вчера лежала на столе.','Книга, прочитанная вчера лежала на столе.','Книга прочитанная вчера, лежала на столе.','Книга, прочитанная вчера, лежала на столе.'],answer:3,note:'Распространённое согласованное определение после определяемого слова обособляется с двух сторон.'},
+  {topic:'Деепричастие',prompt:'Укажите предложение с правильной пунктуацией.',options:['Улыбаясь ребёнок вошёл в комнату.','Улыбаясь, ребёнок вошёл в комнату.','Улыбаясь ребёнок, вошёл в комнату.','Улыбаясь, ребёнок, вошёл в комнату.'],answer:1,note:'Одиночное деепричастие «улыбаясь» обозначает добавочное действие и обособляется.'},
+  {topic:'Сложное предложение',prompt:'Где правильно поставлена запятая?',options:['Я понял что поезд уже ушёл.','Я понял, что поезд уже ушёл.','Я, понял что поезд уже ушёл.','Я понял что, поезд уже ушёл.'],answer:1,note:'Запятая отделяет придаточную часть с союзом «что» от главной.'},
+  {topic:'Тире',prompt:'В каком предложении требуется тире между подлежащим и сказуемым?',options:['Москва является столицей России.','Москва — столица России.','Москва была столицей.','Москва очень красива.'],answer:1,note:'Оба главных члена выражены существительными в именительном падеже, связка отсутствует.'},
+  {topic:'Бессоюзная связь',prompt:'В каком предложении двоеточие объясняет причину?',options:['Я остановился: впереди дорогу преградила вода.','Солнце село — стало холодно.','Ещё шаг — и мы у цели.','Я спешил, но опоздал.'],answer:0,note:'Вторая часть называет причину остановки; можно подставить союз «потому что».'},
+  {topic:'Чужая речь',prompt:'Укажите предложение с правильно оформленной косвенной речью.',options:['Учитель сказал, что «урок окончен».','Учитель сказал, что урок окончен.','Учитель сказал: что урок окончен.','Учитель сказал что, урок окончен.'],answer:1,note:'Косвенная речь оформляется как придаточная часть без кавычек.'},
+  {topic:'Синтаксис',prompt:'Какое предложение является односоставным безличным?',options:['Смеркается.','Дети играют.','Наступил вечер.','Тишина окружала нас.'],answer:0,note:'В предложении «Смеркается» нет и не может быть действующего подлежащего.'},
+  {topic:'Текст',prompt:'Каким средством связаны предложения? «На опушке рос дуб. Дуб был виден издалека».',options:['синонимом','лексическим повтором','антонимом','вводным словом'],answer:1,note:'Слово «дуб» повторяется во втором предложении — это лексический повтор.'},
+  {topic:'Выразительность',prompt:'Какое средство выразительности использовано в сочетании «лес шептал»?',options:['метафора-олицетворение','гипербола','литота','градация'],answer:0,note:'Неживому объекту приписано действие живого существа — это олицетворение.'},
+  {topic:'Фонетика',prompt:'В каком варианте верно указано количество букв и звуков в слове «юла»?',options:['3 буквы, 3 звука','3 буквы, 4 звука','4 буквы, 3 звука','4 буквы, 4 звука'],answer:1,note:'В начале слова Ю обозначает два звука [й’у]: [й’ула] — 3 буквы, 4 звука.'}
+ ]
+});
+window.ALL_TESTS.push({
+ title:'Вариант 02',
+ subtitle:'Синтаксис, пунктуация, лексика и орфография. 25 заданий с мгновенной проверкой.',
+ questions:[
+  {topic:'Подлежащее и сказуемое',prompt:'В каком предложении согласование главных членов соответствует норме?',options:['Группа туристов подошли к музею.','Группа туристов подошла к музею.','Большая часть работ были проверены вчера.','Стая птиц пролетели над лесом.'],answer:1,note:'При подлежащем со словами «группа», «стая», «часть» сказуемое обычно согласуется с главным словом в единственном числе.'},
+  {topic:'Приложение',prompt:'Укажите правильное написание.',options:['озеро-Байкал','Москва река','Москва-река','река-Волга'],answer:2,note:'В сочетании «Москва-река» одиночное приложение стоит после имени собственного и присоединяется дефисом.'},
+  {topic:'Однородные члены',prompt:'Где знаки препинания расставлены верно?',options:['Он любил и музыку, и театр, и живопись.','Он любил, и музыку и театр, и живопись.','Он любил и музыку и театр и живопись.','Он любил, и музыку, и театр, и живопись.'],answer:0,note:'При повторяющемся союзе И однородные члены разделяются запятыми; перед первым союзом запятая не ставится.'},
+  {topic:'Обобщающее слово',prompt:'Выберите правильное оформление предложения.',options:['Всё напоминало о лете тёплый ветер, запах травы, яркое солнце.','Всё напоминало о лете: тёплый ветер, запах травы, яркое солнце.','Всё: напоминало о лете — тёплый ветер, запах травы, яркое солнце.','Всё напоминало: о лете тёплый ветер, запах травы, яркое солнце.'],answer:1,note:'После обобщающего слова перед перечислением ставится двоеточие.'},
+  {topic:'Обращение',prompt:'В каком предложении обращение оформлено правильно?',options:['Друзья давайте начнём работу.','Друзья, давайте начнём работу.','Друзья давайте, начнём работу.','Друзья, давайте, начнём работу.'],answer:1,note:'Обращение «друзья» отделяется запятой; между сказуемым и инфинитивом запятая не нужна.'},
+  {topic:'Вводные слова',prompt:'Укажите предложение, в котором слово «однако» является вводным и обособляется.',options:['Однако дождь не начинался.','Дождь однако не начинался.','Дождь, однако, не начинался.','Он хотел уйти, однако остался.'],answer:2,note:'В середине простого предложения «однако» имеет значение вводного слова. В начале предложения и как противительный союз оно не обособляется с двух сторон.'},
+  {topic:'Уточнение',prompt:'Где правильно обособлён уточняющий член предложения?',options:['Завтра вечером мы встретимся.','Завтра, вечером, мы встретимся.','Там у реки стоял дом.','Там, у реки, стоял дом.'],answer:3,note:'Обстоятельство «у реки» конкретизирует более общее слово «там» и обособляется.'},
+  {topic:'Определение',prompt:'В каком предложении причастный оборот оформлен правильно?',options:['Уставший после дороги путник остановился.','Путник уставший после дороги остановился.','Путник, уставший после дороги, остановился.','Путник, уставший после дороги остановился.'],answer:2,note:'Распространённое определение после определяемого слова обособляется с двух сторон.'},
+  {topic:'Сравнительный оборот',prompt:'Где запятая поставлена верно?',options:['Пруд как зеркало блестел на солнце.','Пруд, как зеркало, блестел на солнце.','Он работает как учитель.','Его приняли, как специалиста.'],answer:1,note:'Оборот имеет значение уподобления и обособляется. В сочетаниях «работает как учитель», «приняли как специалиста» значение роли — без запятой.'},
+  {topic:'СПП',prompt:'Укажите правильную пунктуацию.',options:['Когда стемнело мы зажгли фонари.','Когда стемнело, мы зажгли фонари.','Когда, стемнело мы зажгли фонари.','Когда стемнело мы, зажгли фонари.'],answer:1,note:'Придаточная часть времени, стоящая перед главной, отделяется запятой.'},
+  {topic:'Стык союзов',prompt:'В каком варианте верно расставлены знаки?',options:['Я понял, что, если поспешу, успею на поезд.','Я понял что если поспешу, успею на поезд.','Я понял, что если поспешу, успею на поезд.','Я понял, что если поспешу успею на поезд.'],answer:0,note:'На стыке союзов ЧТО и ЕСЛИ ставится запятая, потому что у придаточного с ЕСЛИ нет второй части союза «то».'},
+  {topic:'ССП',prompt:'В каком предложении перед И нужна запятая?',options:['Утром похолодало и пошёл снег.','На площади играл оркестр и дети танцевали.','В комнате было тихо и тепло.','Кто вы и зачем пришли?'],answer:1,note:'В варианте 2 две грамматические основы и нет общего члена предложения: оркестр играл, дети танцевали.'},
+  {topic:'БСП',prompt:'Какой знак нужен? «Я выглянул в окно (…) улица была пуста».',options:['запятая','двоеточие','точка с запятой','никакой'],answer:1,note:'Вторая часть поясняет то, что увидел говорящий; можно подставить «и увидел, что».'},
+  {topic:'БСП',prompt:'Какой знак нужен? «Прозвенел звонок (…) ученики вошли в класс».',options:['двоеточие','тире','запятая и тире','скобки'],answer:1,note:'Вторая часть выражает быстрое следствие или смену событий, поэтому уместно тире.'},
+  {topic:'Прямая речь',prompt:'Укажите правильное оформление прямой речи перед словами автора.',options:['«Я вернусь вечером» сказал брат.','«Я вернусь вечером», — сказал брат.','«Я вернусь вечером». — сказал брат.','«Я вернусь вечером» — сказал, брат.'],answer:1,note:'После прямой речи перед словами автора ставятся запятая (внутри кавычек) и тире.'},
+  {topic:'Орфография',prompt:'В каком ряду во всех словах пишется буква А?',options:['к..саться, заг..реть, р..сток','предл..гать, к..сательная, выр..щенный','оз..рение, пл..вчиха, ск..чок','р..внина, ур..внение, пром..кнуть'],answer:1,note:'Предлагать, касательная, выращенный. В остальных рядах встречаются другие гласные или исключения.'},
+  {topic:'Ъ и Ь',prompt:'В каком слове пишется разделительный Ъ?',options:['интерв..ю','солов..и','об..ём','п..еса'],answer:2,note:'После приставки на согласную перед Ё пишется Ъ: объём. В остальных словах — разделительный Ь.'},
+  {topic:'Слитно/раздельно',prompt:'В каком предложении выделенное сочетание пишется слитно?',options:['Он шёл, (НЕ)СМОТРЯ по сторонам.','Я имел (В)ВИДУ другое.','Он появился (В)СВЯЗИ с переменами.','Поговорим (НА)СЧЁТ поездки.'],answer:3,note:'Производный предлог «насчёт» в значении «о» пишется слитно. В остальных примерах сочетания пишутся раздельно.'},
+  {topic:'Лексика',prompt:'В каком предложении нет речевой избыточности?',options:['Он впервые дебютировал на сцене.','Мы поднялись вверх по лестнице.','Писатель написал свою автобиографию.','Экспедиция достигла цели вечером.'],answer:3,note:'В первых трёх предложениях есть плеоназмы: дебют всегда первый, подняться можно только вверх, автобиография — собственное жизнеописание.'},
+  {topic:'Фразеология',prompt:'Каково значение фразеологизма «держать язык за зубами»?',options:['говорить громко','молчать, не выдавать тайну','выступать убедительно','исправлять произношение'],answer:1,note:'Фразеологизм означает молчать и не разглашать известное.'},
+  {topic:'Паронимы',prompt:'Выберите предложение с правильным употреблением слова.',options:['На окне висели ледовые узоры.','Это был памятный подарок.','Он проявил командировочные качества.','Нам выдали абонентскую карту в театр.'],answer:1,note:'Подарок может быть памятным. Правильно: ледяные узоры, командирские качества, абонемент в театр.'},
+  {topic:'Морфология',prompt:'Укажите нормативную форму числительного.',options:['около пятиста страниц','с обоими подругами','к двумстам участникам','в полуторастах километров'],answer:2,note:'Нормативно: к двумстам участникам. Правильно было бы: около пятисот, с обеими подругами, в полутораста километрах.'},
+  {topic:'Орфоэпия',prompt:'В каком слове ударение поставлено верно?',options:['тОртов','дОговор','начАла (она)','срЕдства'],answer:3,note:'Правильно: срЕдства. Нормы: тортОв, договОр, началА.'},
+  {topic:'Текст',prompt:'Какое слово логично вставить? «Исследование завершено. …, результаты ещё предстоит проверить».',options:['Поэтому','Однако','Например','Именно'],answer:1,note:'Вторая мысль противопоставлена первой, поэтому подходит противительный союз «однако».'},
+  {topic:'Выразительность',prompt:'Какое средство использовано: «Не напрасно дули ветры, не напрасно шла гроза»?',options:['анафора','оксюморон','литота','метонимия'],answer:0,note:'Одинаковое начало соседних конструкций («не напрасно») — анафора.'}
+ ]
+});
+window.ALL_TESTS.push({
+ title:'Вариант 03',
+ subtitle:'Комплексная практика по всем разделам программы: от фонетики до анализа текста.',
+ questions:[
+  {topic:'Фонетика',prompt:'Сколько букв и звуков в слове «огонь»?',options:['5 букв, 5 звуков','5 букв, 4 звука','4 буквы, 5 звуков','4 буквы, 4 звука'],answer:1,note:'Мягкий знак звука не обозначает: 5 букв и 4 звука.'},
+  {topic:'Орфоэпия',prompt:'В каком слове ударение указано верно?',options:['прИняла','принялА','бАловать','квАртал'],answer:1,note:'Нормативно: принялА. Также: баловАть, квартАл.'},
+  {topic:'Синонимы',prompt:'Какая пара слов является синонимической?',options:['смелый — храбрый','высокий — низкий','адресат — адресант','эффектный — эффективный'],answer:0,note:'Слова «смелый» и «храбрый» близки по значению. Остальные пары — антонимы или паронимы.'},
+  {topic:'Фразеология',prompt:'Что означает выражение «рукой подать»?',options:['очень трудно','очень близко','очень дорого','действовать сообща'],answer:1,note:'«Рукой подать» означает «совсем близко».'},
+  {topic:'Морфемика',prompt:'Каков морфемный состав слова «подводный»?',options:['корень подвод, суффикс н, окончание ый','приставка под, корень вод, суффикс н, окончание ый','приставка по, корень дв, суффикс одн, окончание ый','корень водн, окончание ый'],answer:1,note:'Под- — приставка, -вод- — корень, -н- — суффикс, -ый — окончание.'},
+  {topic:'Словообразование',prompt:'Каким способом образовано слово «лесник» от слова «лес»?',options:['приставочным','суффиксальным','бессуффиксным','сложением основ'],answer:1,note:'Слово образовано присоединением суффикса -ник- к основе «лес».'},
+  {topic:'Части речи',prompt:'Какой частью речи является выделенное сочетание: «НЕСМОТРЯ НА дождь, матч продолжили»?',options:['деепричастием','производным предлогом','наречием','частицей'],answer:1,note:'«Несмотря на» имеет уступительное значение и является производным предлогом.'},
+  {topic:'-ТСЯ / -ТЬСЯ',prompt:'В каком варианте слово написано правильно?',options:['он стараеться','нужно готовится','он старается','пусть учиться'],answer:2,note:'Что делает? — старается, без мягкого знака. Правильно: нужно готовиться, пусть учится.'},
+  {topic:'Чередование',prompt:'Какая буква пропущена в слове «соб..ру»?',options:['и','е','я','буква не нужна'],answer:1,note:'В корне -бер-/-бир- пишется И при наличии суффикса -а-: собирать, но соберу.'},
+  {topic:'З/С в приставках',prompt:'Укажите слово, написанное правильно.',options:['безкрайний','бескрайний','росписание','исбежать'],answer:1,note:'Перед глухим К в приставке пишется С: бескрайний. Правильно также писать «расписание» и «избежать».'},
+  {topic:'Ы/И после приставок',prompt:'В каком слове после русской приставки пишется Ы?',options:['без..дейный','сверх..нтересный','меж..нститутский','вз..мать'],answer:0,note:'После русской приставки на согласную начальное И корня обычно заменяется на Ы: безыдейный. Сверх-, меж- сохраняют И; «взимать» — исключение.'},
+  {topic:'-ИК- / -ЕК-',prompt:'В каком слове пишется суффикс -ИК-?',options:['замоч..к','ключ..к','мешоч..к','ореш..к'],answer:1,note:'Ключик — ключика: гласная И сохраняется. В остальных словах при склонении Е выпадает: замочек — замочка.'},
+  {topic:'Н и НН',prompt:'В каком слове пишется одна Н?',options:['глиня..ый','деревя..ый','оловя..ый','стекля..ый'],answer:0,note:'Глиняный пишется с одной Н. Деревянный, оловянный, стеклянный — исключения с НН.'},
+  {topic:'Местоимения',prompt:'Укажите правильное написание.',options:['не у кого не спросил','ни у кого не спросил','некого не спросил','ниукого не спросил'],answer:1,note:'При усилении отрицания употребляется НИ: ни у кого не спросил. Предлог разделяет части местоимения.'},
+  {topic:'Предлоги',prompt:'В каком варианте производный предлог написан неправильно?',options:['вследствие дождя','в течение недели','насчёт встречи','в течении недели'],answer:3,note:'В значении времени пишется «в течение недели» с Е на конце и раздельно.'},
+  {topic:'Причастный оборот',prompt:'Где знаки препинания расставлены правильно?',options:['Освещённая луной тропа блестела.','Тропа освещённая луной блестела.','Тропа, освещённая луной, блестела.','Тропа, освещённая луной блестела.'],answer:2,note:'Причастный оборот после определяемого слова «тропа» обособляется с двух сторон.'},
+  {topic:'Однородные члены',prompt:'В каком предложении запятая перед И не нужна?',options:['Солнце скрылось, и стало прохладно.','Он открыл окно и впустил свежий воздух.','Дождь кончился, и дети вышли во двор.','Наступил вечер, и зажглись фонари.'],answer:1,note:'Два однородных сказуемых относятся к одному подлежащему «он» и соединены одиночным союзом И.'},
+  {topic:'Сложная связь',prompt:'Какие виды связи представлены? «Когда рассвело, туман рассеялся, и показались горы».',options:['только подчинительная','только сочинительная','подчинительная и сочинительная','бессоюзная и подчинительная'],answer:2,note:'«Когда рассвело» связано подчинением, а части «туман рассеялся» и «показались горы» — сочинительным союзом И.'},
+  {topic:'Двоеточие',prompt:'Выберите предложение с правильным двоеточием.',options:['Я взял всё необходимое: карту, компас и фонарь.','Я: взял всё необходимое карту, компас и фонарь.','Я взял: всё необходимое, карту, компас и фонарь.','Я взял всё: необходимое карту, компас и фонарь.'],answer:0,note:'После обобщающего сочетания «всё необходимое» перед перечислением ставится двоеточие.'},
+  {topic:'Грамматическая ошибка',prompt:'В каком предложении допущена ошибка в построении причастного оборота?',options:['Мы увидели дом, стоящий у реки.','Письмо, полученное вчера, лежало на столе.','Приведённые факты в статье убедительны.','Книга, подаренная другом, мне понравилась.'],answer:2,note:'Причастный оборот не должен разрывать сочетание определяемого слова с зависимыми словами: верно «факты, приведённые в статье».'},
+  {topic:'Стили речи',prompt:'Для какого стиля характерны точность, логичность, термины и доказательность?',options:['разговорного','научного','художественного','официально-делового'],answer:1,note:'Перечисленные признаки характерны для научного стиля.'},
+  {topic:'Тип речи',prompt:'Какой тип речи обычно передаёт последовательность развивающихся событий?',options:['описание','рассуждение','повествование','характеристика'],answer:2,note:'Повествование строится как последовательность действий и событий.'},
+  {topic:'Связность текста',prompt:'Каким средством связаны предложения? «Мы вошли в старый парк. Он встретил нас тишиной».',options:['личным местоимением','антонимом','союзом','однокоренным словом'],answer:0,note:'Местоимение «он» заменяет существительное «парк» и связывает предложения.'},
+  {topic:'Выразительность',prompt:'Какое средство использовано: «Снег лежал, словно белое покрывало»?',options:['сравнение','метонимия','градация','риторический вопрос'],answer:0,note:'Союз «словно» вводит сравнение снега с белым покрывалом.'},
+  {topic:'Культура речи',prompt:'Укажите нормативное словосочетание.',options:['согласно расписания','благодаря помощи','оплатить за билет','одеть куртку'],answer:1,note:'Предлог «благодаря» требует дательного падежа: благодаря помощи. Правильно также: согласно расписанию, оплатить билет, надеть куртку.'}
+ ]
+});
+(() => {
+  const home = document.getElementById('home-view');
+  const testView = document.getElementById('test-view');
+  const root = document.getElementById('questions');
+  let current = 0, started = 0, timerId = 0;
+  const state = {answered:0,correct:0,locked:new Set()};
+
+  document.querySelectorAll('[data-start]').forEach(button => button.addEventListener('click', () => start(Number(button.dataset.start))));
+  document.getElementById('back-home').addEventListener('click', showHome);
+  document.getElementById('reset').addEventListener('click', () => start(current));
+
+  function showHome(){
+    clearInterval(timerId);
+    testView.classList.add('hidden');
+    home.classList.remove('hidden');
+    window.scrollTo(0,0);
+    document.title='Тренажёр по русскому языку';
+  }
+  function start(index){
+    current=index;
+    const test=window.ALL_TESTS[index];
+    state.answered=0; state.correct=0; state.locked=new Set();
+    root.innerHTML='';
+    document.getElementById('variant-title').textContent=test.title;
+    document.getElementById('variant-subtitle').textContent=test.subtitle;
+    document.getElementById('total').textContent=test.questions.length;
+    document.getElementById('answered-total').textContent=test.questions.length;
+    document.getElementById('correct').textContent='0';
+    document.getElementById('answered').textContent='0';
+    document.getElementById('progress').style.width='0';
+    document.getElementById('result').classList.remove('show');
+    test.questions.forEach((q,index)=>renderQuestion(q,index,test));
+    home.classList.add('hidden'); testView.classList.remove('hidden');
+    document.title=test.title+' — русский язык';
+    window.scrollTo(0,0);
+    clearInterval(timerId); started=Date.now(); updateTimer();
+    timerId=setInterval(updateTimer,1000);
+  }
+  function renderQuestion(q,index,test){
+    const card=document.createElement('article');
+    card.className='question'; card.id='q-'+(index+1);
+    card.innerHTML='<div class="q-head"><span class="q-number">'+String(index+1).padStart(2,'0')+'</span><span class="topic">'+q.topic+'</span></div><p class="prompt"></p><div class="options"></div><div class="feedback" aria-live="polite"></div>';
+    card.querySelector('.prompt').textContent=q.prompt;
+    const options=card.querySelector('.options');
+    q.options.forEach((option,optionIndex)=>{
+      const label=document.createElement('label'); label.className='option';
+      label.innerHTML='<input type="radio" name="q'+index+'" value="'+optionIndex+'"><span></span>';
+      label.querySelector('span').textContent=option;
+      label.querySelector('input').addEventListener('change',()=>answer(index,optionIndex,card,test));
+      options.appendChild(label);
+    });
+    root.appendChild(card);
+  }
+  function answer(questionIndex,selected,card,test){
+    if(state.locked.has(questionIndex))return;
+    state.locked.add(questionIndex); state.answered++;
+    const q=test.questions[questionIndex], labels=[...card.querySelectorAll('.option')];
+    labels.forEach((label,i)=>{
+      label.classList.add('locked'); label.querySelector('input').disabled=true;
+      if(i===q.answer)label.classList.add('correct');
+      if(i===selected&&i!==q.answer)label.classList.add('wrong');
+    });
+    const ok=selected===q.answer; if(ok)state.correct++;
+    const feedback=card.querySelector('.feedback');
+    feedback.className='feedback show '+(ok?'good':'bad');
+    feedback.textContent=(ok?'Верно. ':'Неверно. ')+q.note;
+    card.classList.add('answered'); updateScore(test.questions.length);
+  }
+  function updateScore(total){
+    document.getElementById('correct').textContent=state.correct;
+    document.getElementById('answered').textContent=state.answered;
+    document.getElementById('progress').style.width=(state.answered/total*100)+'%';
+    if(state.answered===total){
+      const percent=Math.round(state.correct/total*100), result=document.getElementById('result');
+      result.classList.add('show');
+      result.querySelector('strong').textContent=percent>=80?'Отличная работа':percent>=60?'Хороший результат':'Нужна ещё практика';
+      result.querySelector('span').textContent=percent+'% правильных ответов';
+    }
+  }
+  function updateTimer(){
+    const seconds=Math.floor((Date.now()-started)/1000);
+    document.getElementById('timer').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');
+  }
+})();
+</script>
+</body>
+</html>
+
+
