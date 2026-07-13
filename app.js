@@ -50,6 +50,7 @@
 
   function updateScore() {
     document.getElementById('correct').textContent = state.correct;
+    document.getElementById('points').textContent = state.correct * 4;
     document.getElementById('answered').textContent = state.answered;
     document.getElementById('progress').style.width = `${state.answered / test.questions.length * 100}%`;
     if (state.answered === test.questions.length) {
