@@ -1,5 +1,5 @@
 (function(){
-const q=(topic,prompt,options,answer,note,points)=>({topic,prompt,options,answer,note,points});
+const q=(topic,prompt,options,answer,note,points)=>({topic,prompt,options,answer,note,points,solution:/^[AB]\d+$/.test(topic)?note:''});
 window.OTHER_TESTS=[];
 
 OTHER_TESTS.push({subject:'Высшая математика',title:'Математика · Вариант 1',subtitle:'10 заданий по структуре методички. Максимум — 100 баллов.',questions:[
