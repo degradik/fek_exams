@@ -2,25 +2,67 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Тренажёр по русскому языку</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14213d">
+  <title>Тренажёры вступительных экзаменов РГЭУ</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home">
-  <main class="home-card">
-    <p class="eyebrow">РГЭУ (РИНХ) · 2026</p>
-    <h1>Тренажёр по русскому языку</h1>
-    <p class="lead">Шесть интерактивных вариантов по русскому языку. Ответ проверяется сразу, результат сохраняется на экране.</p>
-    <p><a class="back" style="display:inline-block;background:#14213d;padding:12px 18px;border-radius:12px" href="other-exams.html">Математика, информатика, экономика и английский →</a></p>
-    <div class="variant-grid">
+<body class="home catalog-home">
+  <main class="home-card catalog-card">
+    <header class="catalog-hero">
+      <p class="eyebrow">РГЭУ (РИНХ) · 2026</p>
+      <h1>Все экзаменационные тренажёры</h1>
+      <p class="lead">Выберите предмет и вариант. Ответы проверяются сразу, а правильные ответы и баллы остаются на экране.</p>
+      <nav class="catalog-nav" aria-label="Предметы">
+        <a href="#russian">Русский язык</a><a href="#math">Математика</a><a href="#informatics">Информатика</a><a href="#economics">Экономика</a><a href="#english">Английский</a><a href="#literature">Литература</a><a href="#state-law">История государства и права</a>
+      </nav>
+    </header>
+
+    <section class="catalog-section" id="russian"><div class="catalog-heading"><h2>Русский язык</h2><p>6 вариантов · по 25 заданий</p></div><div class="variant-grid">
       <a class="variant-link coral" href="variant-1.html"><span>Вариант 01</span><strong>Орфография и нормы</strong><small>25 вопросов · 60 минут</small></a>
       <a class="variant-link blue" href="variant-2.html"><span>Вариант 02</span><strong>Синтаксис и пунктуация</strong><small>25 вопросов · 60 минут</small></a>
       <a class="variant-link green" href="variant-3.html"><span>Вариант 03</span><strong>Комплексная практика</strong><small>25 вопросов · 60 минут</small></a>
-          <a class="variant-link coral" href="variant-4.html"><span>Вариант 04</span><strong>Новая практика</strong><small>25 вопросов · 100 баллов</small></a>
+      <a class="variant-link coral" href="variant-4.html"><span>Вариант 04</span><strong>Новая практика</strong><small>25 вопросов · 100 баллов</small></a>
       <a class="variant-link blue" href="variant-5.html"><span>Вариант 05</span><strong>Комплексный тест</strong><small>25 вопросов · 100 баллов</small></a>
       <a class="variant-link green" href="variant-6.html"><span>Вариант 06</span><strong>Из методички PDF</strong><small>25 вопросов · 100 баллов</small></a>
-    </div>
-    <p class="source-note">Составлено по программе вступительного испытания РГЭУ (РИНХ) и открытым материалам ФИПИ ЕГЭ 2025–2026.</p>
+    </div></section>
+
+    <section class="catalog-section" id="math"><div class="catalog-heading"><h2>Высшая математика</h2><a class="catalog-guide" href="math-guide.html">Краткая методичка →</a></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=0"><span>Вариант 01</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=1"><span>Вариант 02</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=2"><span>Вариант 03</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a>
+    </div></section>
+
+    <section class="catalog-section" id="informatics"><div class="catalog-heading"><h2>Информатика</h2><p>3 варианта · по 15 заданий</p></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=3"><span>Вариант 01</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=4"><span>Вариант 02</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=5"><span>Вариант 03</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a>
+    </div></section>
+
+    <section class="catalog-section" id="economics"><div class="catalog-heading"><h2>Основы экономики</h2><p>3 варианта · по 20 заданий</p></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=6"><span>Вариант 01</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=7"><span>Вариант 02</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=8"><span>Вариант 03</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a>
+    </div></section>
+
+    <section class="catalog-section" id="english"><div class="catalog-heading"><h2>Иностранный язык</h2><p>3 варианта · по 20 заданий</p></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=9"><span>Вариант 01</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=10"><span>Вариант 02</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=11"><span>Вариант 03</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a>
+    </div></section>
+
+    <section class="catalog-section" id="literature"><div class="catalog-heading"><h2>Литература</h2><p>3 варианта · по 25 заданий</p></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=12"><span>Вариант 01</span><strong>По образцу методички</strong><small>25 заданий · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=13"><span>Вариант 02</span><strong>Древняя Русь и XIX век</strong><small>25 заданий · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=14"><span>Вариант 03</span><strong>XX век и теория</strong><small>25 заданий · 100 баллов</small></a>
+    </div></section>
+
+    <section class="catalog-section" id="state-law"><div class="catalog-heading"><h2>История государства и права России</h2><p>3 варианта · структура методички</p></div><div class="variant-grid">
+      <a class="variant-link coral" href="other-exams.html?test=15"><span>Вариант 01</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a>
+      <a class="variant-link blue" href="other-exams.html?test=16"><span>Вариант 02</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a>
+      <a class="variant-link green" href="other-exams.html?test=17"><span>Вариант 03</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a>
+    </div></section>
+    <p class="source-note">Учебные тренажёры составлены по программам вступительных испытаний и методическим материалам.</p>
   </main>
 </body>
 </html>

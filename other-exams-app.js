@@ -2,6 +2,7 @@
 const tests=window.OTHER_TESTS||[],home=document.getElementById('home-view'),view=document.getElementById('test-view'),root=document.getElementById('questions');
 let current=0,started=0,timerId=0,state={answered:0,correct:0,points:0,locked:new Set()};
 const colors=['coral','blue','green'];
+const requestedParam=new URLSearchParams(location.search).get('test'),requested=requestedParam===null?NaN:Number(requestedParam);
 const groups=document.getElementById('exam-groups');
 [...new Set(tests.map(t=>t.subject))].forEach(subject=>{
   const section=document.createElement('section');
@@ -28,7 +29,7 @@ const groups=document.getElementById('exam-groups');
 });
 document.getElementById('back-home').addEventListener('click',showHome);
 document.getElementById('reset').addEventListener('click',()=>start(current));
-function showHome(){clearInterval(timerId);view.classList.add('hidden');home.classList.remove('hidden');scrollTo(0,0)}
+function showHome(){clearInterval(timerId);if(Number.isInteger(requested)&&requested>=0&&requested<tests.length){location.href='index.html';return}view.classList.add('hidden');home.classList.remove('hidden');scrollTo(0,0)}
 function start(index){
   current=index;const test=tests[index],totalPoints=test.questions.reduce((s,q)=>s+(q.points||4),0);
   state={answered:0,correct:0,points:0,locked:new Set()};root.innerHTML='';
@@ -75,4 +76,5 @@ function answer(i,selected,c,test,totalPoints){
   if(state.answered===test.questions.length){const pct=Math.round(state.points/totalPoints*100),r=document.getElementById('result'),passed=!test.passPoints||state.points>=test.passPoints;r.classList.add('show');r.querySelector('strong').textContent=pct>=80?'Отличная работа':pct>=60?'Хороший результат':passed&&test.passPoints?'Минимальный порог пройден':'Нужна ещё практика';r.querySelector('span').textContent=state.points+' из '+totalPoints+' баллов ('+pct+'%)'+(test.passPoints?' · проходной минимум '+test.passPoints:'')}
 }
 function tick(){const s=Math.floor((Date.now()-started)/1000);document.getElementById('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+if(Number.isInteger(requested)&&requested>=0&&requested<tests.length)start(requested);
 })();

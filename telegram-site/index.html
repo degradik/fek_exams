@@ -12,24 +12,48 @@
 
 
 button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.hidden{display:none!important}.variant-link{border:0;text-align:left;cursor:pointer;width:100%}#test-view{min-height:100vh}.home{padding:28px}.link-button{border:0;background:transparent;padding:0;cursor:pointer;font:inherit}
+.catalog-home{display:block;padding:28px}.catalog-card{width:min(1180px,100%);margin:0 auto}.catalog-hero{padding-bottom:18px;border-bottom:1px solid var(--line)}.catalog-hero h1{max-width:920px}.catalog-nav{display:flex;gap:8px;overflow-x:auto;padding:18px 1px 4px;scrollbar-width:none}.catalog-nav a{flex:0 0 auto;padding:9px 13px;border:1px solid #cfd7e3;border-radius:999px;background:white;color:var(--ink);text-decoration:none;font-size:.85rem;font-weight:800}.catalog-section{scroll-margin-top:18px;padding-top:34px}.catalog-section+.catalog-section{margin-top:8px;border-top:1px solid var(--line)}.catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:16px}.catalog-heading h2{font-family:Georgia,serif;font-size:clamp(1.65rem,4vw,2.35rem);margin:0}.catalog-heading p{margin:0;color:var(--muted);font-size:.87rem}.catalog-section .variant-grid{margin:18px 0 28px}.catalog-section .variant-link{min-height:160px}.catalog-section .variant-link strong{font-size:1.28rem}.catalog-guide{color:var(--blue);font-weight:800;text-decoration:none}@media(max-width:850px){.catalog-home{padding:12px}.catalog-card{padding:24px 18px;border-radius:22px}.catalog-heading{display:block}.catalog-heading p,.catalog-guide{display:inline-block;margin-top:6px}.catalog-section{padding-top:26px}.catalog-section .variant-grid{margin-top:13px}.catalog-section .variant-link{min-height:132px}}
+.catalog-hero{min-width:0;overflow:hidden}.catalog-nav{width:100%;max-width:100%;min-width:0}
 </style>
 </head>
 <body>
-<section id="home-view" class="home">
-<main class="home-card">
-<p class="eyebrow">РГЭУ (РИНХ) · 2026</p>
-<h1>Тренажёр по русскому языку</h1>
-<p class="lead">Шесть интерактивных вариантов по русскому языку. Всё работает прямо во встроенном браузере Telegram.</p>
-<p><a class="back" style="display:inline-block;background:#14213d;padding:12px 18px;border-radius:12px" href="other-exams.html">Математика, информатика, экономика и английский →</a></p>
-<div class="variant-grid">
+<section id="home-view" class="home catalog-home">
+<main class="home-card catalog-card">
+<header class="catalog-hero"><p class="eyebrow">РГЭУ (РИНХ) · 2026</p><h1>Все экзаменационные тренажёры</h1><p class="lead">Все предметы и варианты собраны на одной странице. Выберите карточку — тест откроется сразу.</p><nav class="catalog-nav" aria-label="Предметы"><a href="#russian">Русский язык</a><a href="#math">Математика</a><a href="#informatics">Информатика</a><a href="#economics">Экономика</a><a href="#english">Английский</a><a href="#literature">Литература</a><a href="#state-law">История государства и права</a></nav></header>
+
+<section class="catalog-section" id="russian"><div class="catalog-heading"><h2>Русский язык</h2><p>6 вариантов · по 25 заданий</p></div><div class="variant-grid">
 <button class="variant-link coral" data-start="0"><span>Вариант 01</span><strong>Орфография и нормы</strong><small>25 вопросов · 60 минут</small></button>
 <button class="variant-link blue" data-start="1"><span>Вариант 02</span><strong>Синтаксис и пунктуация</strong><small>25 вопросов · 60 минут</small></button>
 <button class="variant-link green" data-start="2"><span>Вариант 03</span><strong>Комплексная практика</strong><small>25 вопросов · 60 минут</small></button>
 <button class="variant-link coral" data-start="3"><span>Вариант 04</span><strong>Новая практика</strong><small>25 вопросов · 100 баллов</small></button>
 <button class="variant-link blue" data-start="4"><span>Вариант 05</span><strong>Комплексный тест</strong><small>25 вопросов · 100 баллов</small></button>
 <button class="variant-link green" data-start="5"><span>Вариант 06</span><strong>Из методички PDF</strong><small>25 вопросов · 100 баллов</small></button>
-</div>
-<p class="source-note">Составлено по программе вступительного испытания РГЭУ (РИНХ) и открытым материалам ФИПИ ЕГЭ 2025–2026.</p>
+</div></section>
+
+<section class="catalog-section" id="math"><div class="catalog-heading"><h2>Высшая математика</h2><a class="catalog-guide" href="math-guide.html">Краткая методичка →</a></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=0"><span>Вариант 01</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=1"><span>Вариант 02</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=2"><span>Вариант 03</span><strong>Математика</strong><small>10 заданий · решения · 100 баллов</small></a>
+</div></section>
+
+<section class="catalog-section" id="informatics"><div class="catalog-heading"><h2>Информатика</h2><p>3 варианта · по 15 заданий</p></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=3"><span>Вариант 01</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=4"><span>Вариант 02</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=5"><span>Вариант 03</span><strong>Информатика</strong><small>15 заданий · 100 баллов</small></a>
+</div></section>
+
+<section class="catalog-section" id="economics"><div class="catalog-heading"><h2>Основы экономики</h2><p>3 варианта · по 20 заданий</p></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=6"><span>Вариант 01</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=7"><span>Вариант 02</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=8"><span>Вариант 03</span><strong>Экономика</strong><small>20 заданий · 100 баллов</small></a>
+</div></section>
+
+<section class="catalog-section" id="english"><div class="catalog-heading"><h2>Иностранный язык</h2><p>3 варианта · по 20 заданий</p></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=9"><span>Вариант 01</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=10"><span>Вариант 02</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=11"><span>Вариант 03</span><strong>Английский язык</strong><small>20 заданий · 100 баллов</small></a>
+</div></section>
+
+<section class="catalog-section" id="literature"><div class="catalog-heading"><h2>Литература</h2><p>3 варианта · по 25 заданий</p></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=12"><span>Вариант 01</span><strong>По образцу методички</strong><small>25 заданий · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=13"><span>Вариант 02</span><strong>Древняя Русь и XIX век</strong><small>25 заданий · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=14"><span>Вариант 03</span><strong>XX век и теория</strong><small>25 заданий · 100 баллов</small></a>
+</div></section>
+
+<section class="catalog-section" id="state-law"><div class="catalog-heading"><h2>История государства и права России</h2><p>3 варианта · структура методички</p></div><div class="variant-grid">
+<a class="variant-link coral" href="other-exams.html?test=15"><span>Вариант 01</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a><a class="variant-link blue" href="other-exams.html?test=16"><span>Вариант 02</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a><a class="variant-link green" href="other-exams.html?test=17"><span>Вариант 03</span><strong>Государство и право России</strong><small>47 заданий · 100 баллов</small></a>
+</div></section>
+<p class="source-note">Учебные тренажёры составлены по программам вступительных испытаний и методическим материалам.</p>
 </main>
 </section>
 <section id="test-view" class="test-page hidden">
