@@ -72,7 +72,7 @@ function answer(i,selected,c,test,totalPoints){
   if(ok){state.correct++;state.points+=q.points||4}
   const f=c.querySelector('.feedback');f.className='feedback show '+(ok?'good':'bad');f.textContent=(ok?'Верно. ':'Неверно. ')+q.note;c.classList.add('answered');
   document.getElementById('correct').textContent=state.correct;document.getElementById('points').textContent=state.points;document.getElementById('answered').textContent=state.answered;document.getElementById('progress').style.width=(state.answered/test.questions.length*100)+'%';
-  if(state.answered===test.questions.length){const pct=Math.round(state.points/totalPoints*100),r=document.getElementById('result');r.classList.add('show');r.querySelector('strong').textContent=pct>=80?'Отличная работа':pct>=60?'Хороший результат':'Нужна ещё практика';r.querySelector('span').textContent=state.points+' из '+totalPoints+' баллов ('+pct+'%)'}
+  if(state.answered===test.questions.length){const pct=Math.round(state.points/totalPoints*100),r=document.getElementById('result'),passed=!test.passPoints||state.points>=test.passPoints;r.classList.add('show');r.querySelector('strong').textContent=pct>=80?'Отличная работа':pct>=60?'Хороший результат':passed&&test.passPoints?'Минимальный порог пройден':'Нужна ещё практика';r.querySelector('span').textContent=state.points+' из '+totalPoints+' баллов ('+pct+'%)'+(test.passPoints?' · проходной минимум '+test.passPoints:'')}
 }
 function tick(){const s=Math.floor((Date.now()-started)/1000);document.getElementById('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 })();
