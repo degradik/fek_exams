@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14213d">
+  <title>Краткая методичка по информатике</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{background:#f2efe8}.guide-top{position:sticky;top:0;z-index:5;background:rgba(20,33,61,.96);backdrop-filter:blur(10px);padding:13px 18px}.guide-top a{color:#fff;text-decoration:none;font-weight:800}.guide-wrap{width:min(940px,100%);margin:auto;padding:38px 18px 80px}.guide-hero{background:linear-gradient(135deg,#14213d,#315fa8);color:#fff;border-radius:26px;padding:clamp(26px,6vw,55px);box-shadow:var(--shadow)}.guide-hero h1{max-width:760px;font-size:clamp(2.15rem,7vw,4.5rem)}.guide-hero p{max-width:720px;margin:0;color:#dce7fa}.guide-nav{display:flex;gap:8px;overflow:auto;padding:18px 2px 8px;scrollbar-width:none}.guide-nav a{flex:0 0 auto;padding:8px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:750}.guide-card{scroll-margin-top:74px;background:var(--paper);border:1px solid rgba(20,33,61,.11);border-radius:20px;padding:clamp(20px,4vw,30px);margin-top:17px;box-shadow:0 6px 22px rgba(20,33,61,.05)}.guide-card h2{font-family:Georgia,serif;font-size:1.75rem;margin:0 0 10px}.guide-card h3{font-size:1rem;margin:20px 0 7px;color:var(--blue)}.guide-card p{margin:7px 0;color:#33415c}.formula{margin:12px 0;padding:13px 15px;border-left:4px solid var(--accent);border-radius:0 11px 11px 0;background:#fff1ec;font-family:Consolas,monospace;font-size:1rem;white-space:pre-line}.steps{margin:10px 0 0;padding-left:22px;color:#33415c}.steps li{margin:7px 0}.tip{margin-top:14px;padding:12px 14px;border-radius:11px;background:var(--good-bg);color:#126343}.warning{margin-top:14px;padding:12px 14px;border-radius:11px;background:#fff4dc;color:#785000}.table-wrap{overflow:auto}.values{width:100%;border-collapse:collapse;margin-top:10px;text-align:left}.values th,.values td{padding:9px;border:1px solid var(--line);white-space:nowrap}.values th{background:#edf3fc}.checklist label{display:block;padding:7px 0;color:#33415c}.checklist input{margin-right:8px;accent-color:var(--accent)}code{background:#edf2fa;border-radius:5px;padding:1px 5px}@media(max-width:600px){.guide-wrap{padding-top:22px}.guide-hero{border-radius:20px}.guide-card{border-radius:16px}.guide-card h2{font-size:1.5rem}.values th,.values td{padding:7px}}
+  </style>
+</head>
+<body>
+  <header class="guide-top"><a href="index.html#informatics">← К вариантам по информатике</a></header>
+  <main class="guide-wrap">
+    <section class="guide-hero"><p class="eyebrow" style="color:#ffb09c">Информатика · шпаргалка</p><h1>Алгоритмы решения основных заданий</h1><p>Системы счисления, IP и маски, логика, электронные таблицы, Python, графы, базы данных, сети и устройство компьютера.</p></section>
+    <nav class="guide-nav" aria-label="Темы"><a href="#numbers">Системы счисления</a><a href="#ip">IP и маска</a><a href="#units">Единицы информации</a><a href="#logic">Логика</a><a href="#sheets">Таблицы</a><a href="#python">Python</a><a href="#graphs">Графы</a><a href="#databases">Базы данных</a><a href="#networks">Сети</a></nav>
+
+    <section class="guide-card" id="numbers">
+      <h2>Системы счисления</h2>
+      <p>Основание системы показывает, сколько цифр используется. В двоичной — 0 и 1; в восьмеричной — 0–7; в шестнадцатеричной — 0–9 и A–F, где A=10, B=11, …, F=15.</p>
+      <h3>Из любой системы в десятичную</h3>
+      <ol class="steps"><li>Пронумеруйте разряды справа налево, начиная с нуля.</li><li>Умножьте каждую цифру на основание в степени её разряда.</li><li>Сложите результаты.</li></ol>
+      <div class="formula">101101₂ = 1·2⁵ + 0·2⁴ + 1·2³ + 1·2² + 0·2¹ + 1·2⁰
+= 32 + 8 + 4 + 1 = 45₁₀</div>
+      <h3>Из десятичной системы в другую</h3>
+      <ol class="steps"><li>Делите число на новое основание.</li><li>Каждый раз записывайте остаток.</li><li>Продолжайте, пока частное не станет нулём.</li><li>Прочитайте остатки снизу вверх.</li></ol>
+      <div class="formula">45 / 2 = 22, остаток 1
+22 / 2 = 11, остаток 0
+11 / 2 = 5,  остаток 1
+5 / 2  = 2,  остаток 1
+2 / 2  = 1,  остаток 0
+1 / 2  = 0,  остаток 1
+Ответ: 101101₂</div>
+      <h3>Быстрый перевод 2 ↔ 8 и 2 ↔ 16</h3>
+      <p>Для восьмеричной системы разбивайте двоичное число справа на группы по 3 бита, для шестнадцатеричной — по 4 бита.</p>
+      <div class="formula">110 101 ₂ = 65₈
+1101 0110 ₂ = D6₁₆</div>
+      <div class="tip">Всегда делайте обратную проверку переводом результата в десятичную систему.</div>
+    </section>
+
+    <section class="guide-card" id="ip">
+      <h2>Задания с IP-адресом и маской</h2>
+      <p>IPv4-адрес содержит 32 бита — четыре числа от 0 до 255. Маска тоже содержит 32 бита: сначала идут единицы — часть сети, затем нули — часть узла.</p>
+      <div class="formula">Адрес сети = IP-адрес AND маска</div>
+      <h3>Самый простой случай: маска /24</h3>
+      <p><code>/24</code> означает 24 единицы и 8 битов для узлов. Маска: <code>255.255.255.0</code>.</p>
+      <div class="formula">IP:        192.168.10.37
+Маска:     255.255.255.0
+Сеть:      192.168.10.0
+Broadcast: 192.168.10.255
+Узлы:      192.168.10.1 — 192.168.10.254</div>
+      <h3>Универсальный алгоритм</h3>
+      <ol class="steps"><li>Если дана запись <code>/n</code>, найдите число битов узла: <code>32 − n</code>.</li><li>Количество адресов в подсети: <code>2^(32−n)</code>.</li><li>В обычной задаче доступных узлов: <code>2^(32−n) − 2</code> — адрес сети и broadcast не выдаются узлам.</li><li>Для изменяющегося октета вычислите размер блока: <code>256 − значение маски</code>.</li><li>Найдите интервал блока, куда попадает октет IP. Начало — адрес сети, конец — broadcast.</li></ol>
+      <h3>Пример с /26</h3>
+      <p><code>/26 = 255.255.255.192</code>. Размер блока: <code>256 − 192 = 64</code>. Границы подсетей: 0, 64, 128, 192.</p>
+      <div class="formula">IP:        192.168.1.130
+Маска:     255.255.255.192 (/26)
+130 попадает в блок 128–191
+Сеть:      192.168.1.128
+Broadcast: 192.168.1.191
+Узлы:      192.168.1.129 — 192.168.1.190
+Адресов:   2⁶ = 64; обычных узлов: 64 − 2 = 62</div>
+      <h3>Частые маски последнего октета</h3>
+      <div class="table-wrap"><table class="values"><tr><th>Префикс</th><th>Маска</th><th>Размер блока</th><th>Обычных узлов</th></tr><tr><td>/24</td><td>255.255.255.0</td><td>256</td><td>254</td></tr><tr><td>/25</td><td>255.255.255.128</td><td>128</td><td>126</td></tr><tr><td>/26</td><td>255.255.255.192</td><td>64</td><td>62</td></tr><tr><td>/27</td><td>255.255.255.224</td><td>32</td><td>30</td></tr><tr><td>/28</td><td>255.255.255.240</td><td>16</td><td>14</td></tr></table></div>
+      <h3>Побитовое AND</h3>
+      <p>Если нужна точная проверка, переведите изменяющийся октет в двоичный вид. В результате AND единица остаётся только там, где единицы есть в обоих числах.</p>
+      <div class="formula">130 = 10000010
+192 = 11000000
+AND = 10000000 = 128</div>
+      <div class="warning">Не путайте: адрес сети — первый адрес блока, broadcast — последний. Первый и последний обычный узел находятся между ними.</div>
+    </section>
+
+    <section class="guide-card" id="units">
+      <h2>Единицы информации</h2>
+      <div class="formula">1 байт = 8 бит
+1 Кбайт = 1024 байта
+1 Мбайт = 1024 Кбайта
+1 Гбайт = 1024 Мбайта</div>
+      <p>Если алфавит содержит N равновероятных символов, минимальное число бит на символ находят из условия <code>2ⁱ ≥ N</code>. Объём сообщения: количество символов × бит на символ.</p>
+      <div class="tip">Сначала приведите все величины к одной единице. Нельзя напрямую складывать байты и биты.</div>
+    </section>
+
+    <section class="guide-card" id="logic">
+      <h2>Логика</h2>
+      <div class="table-wrap"><table class="values"><tr><th>A</th><th>B</th><th>НЕ A</th><th>A И B</th><th>A ИЛИ B</th><th>A → B</th></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr></table></div>
+      <p><strong>И</strong> требует истинности обоих условий. <strong>ИЛИ</strong> истинно, если истинно хотя бы одно. Импликация <code>A → B</code> ложна только при A=1 и B=0.</p>
+      <div class="formula">НЕ(A И B) = НЕ A ИЛИ НЕ B
+НЕ(A ИЛИ B) = НЕ A И НЕ B</div>
+    </section>
+
+    <section class="guide-card" id="sheets">
+      <h2>Электронные таблицы</h2>
+      <p>Формула начинается знаком <code>=</code>, диапазон записывается через двоеточие: <code>A1:C5</code>.</p>
+      <div class="table-wrap"><table class="values"><tr><th>Ссылка</th><th>Что меняется при копировании</th></tr><tr><td>A1</td><td>строка и столбец</td></tr><tr><td>$A$1</td><td>ничего</td></tr><tr><td>$A1</td><td>только строка</td></tr><tr><td>A$1</td><td>только столбец</td></tr></table></div>
+      <p>Частые функции: <code>СУММ</code>, <code>СРЗНАЧ</code>, <code>МИН</code>, <code>МАКС</code>, <code>ЕСЛИ(условие; истина; ложь)</code>.</p>
+      <div class="tip">При копировании формулы сначала определите смещение, затем примените его только к незакреплённым частям адресов.</div>
+    </section>
+
+    <section class="guide-card" id="python">
+      <h2>Алгоритмы и Python</h2>
+      <p>Выполняйте команды по порядку и после каждой строки записывайте новое значение переменных.</p>
+      <div class="formula">range(4) → 0, 1, 2, 3
+range(1, 4) → 1, 2, 3
+17 // 5 → 3
+17 % 5 → 2
+len("exam") → 4
+sum([2, 3, 5]) → 10</div>
+      <p><code>//</code> — целая часть деления, <code>%</code> — остаток. Деление положительного целого на 10 через <code>//</code> удаляет последнюю цифру, остаток от деления на 10 эту цифру получает.</p>
+      <ol class="steps"><li>В цикле выпишите значения <code>i</code>.</li><li>Создайте маленькую таблицу состояний переменных.</li><li>Для <code>if</code> сначала вычислите условие, затем выполняйте только выбранную ветвь.</li></ol>
+    </section>
+
+    <section class="guide-card" id="graphs">
+      <h2>Графы и поиск</h2>
+      <p><strong>DFS</strong> — поиск в глубину: идёт по одному пути как можно дальше. <strong>BFS</strong> — поиск в ширину: обходит вершины слоями.</p>
+      <ul class="steps"><li>Достижимость можно проверить DFS или BFS.</li><li>Кратчайший путь по числу рёбер в невзвешенном графе находит BFS.</li><li>Двоичный поиск работает только в отсортированном массиве и имеет сложность O(log n).</li></ul>
+    </section>
+
+    <section class="guide-card" id="databases">
+      <h2>Базы данных</h2>
+      <p>Таблица состоит из полей — столбцов — и записей — строк. Первичный ключ однозначно идентифицирует запись и не должен повторяться.</p>
+      <p>Запрос выбирает данные по условию. Связь «один ко многим» означает, что одной записи первой таблицы соответствует несколько записей второй.</p>
+    </section>
+
+    <section class="guide-card" id="networks">
+      <h2>Сети, протоколы и компьютер</h2>
+      <div class="table-wrap"><table class="values"><tr><th>Понятие</th><th>Назначение</th></tr><tr><td>LAN</td><td>локальная сеть</td></tr><tr><td>WAN</td><td>глобальная сеть</td></tr><tr><td>HTTP/HTTPS</td><td>передача веб-страниц</td></tr><tr><td>FTP</td><td>передача файлов</td></tr><tr><td>SMTP</td><td>отправка электронной почты</td></tr><tr><td>DNS</td><td>перевод доменного имени в IP</td></tr></table></div>
+      <p>Процессор выполняет команды и арифметико-логические операции. ОЗУ хранит данные временно и очищается при выключении. Накопитель хранит данные долговременно.</p>
+      <p>Операционная система и драйверы — системное ПО; редакторы, браузеры и табличные процессоры — прикладное ПО.</p>
+    </section>
+
+    <section class="guide-card checklist"><h2>Проверка перед ответом</h2><label><input type="checkbox"> Я подписал основание системы счисления и проверил разряды.</label><label><input type="checkbox"> В IP-задаче я отдельно нашёл сеть, broadcast и диапазон узлов.</label><label><input type="checkbox"> Я помню, что верхняя граница range не включается.</label><label><input type="checkbox"> В формулах таблицы я учёл знаки $.</label><label><input type="checkbox"> Биты и байты приведены к одной единице.</label></section>
+  </main>
+</body>
+</html>

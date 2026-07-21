@@ -9,11 +9,14 @@ const groups=document.getElementById('exam-groups');
   section.className='subject-section';
   section.innerHTML='<div class="subject-heading"><h2></h2></div><div class="variant-grid"></div>';
   section.querySelector('h2').textContent=subject;
-  if(subject==='Высшая математика'){
+  const guideInfo=subject==='Высшая математика'?{href:'math-guide.html',title:'Краткая методичка',text:'Формулы и базовые способы решения →'}:subject==='Информатика'?{href:'informatics-guide.html',title:'Методичка по информатике',text:'Системы счисления, IP и маски →'}:null;
+  if(guideInfo){
     const guide=document.createElement('a');
     guide.className='guide-link';
-    guide.href='math-guide.html';
-    guide.innerHTML='<span>Краткая методичка</span><small>Формулы и базовые способы решения →</small>';
+    guide.href=guideInfo.href;
+    guide.innerHTML='<span></span><small></small>';
+    guide.querySelector('span').textContent=guideInfo.title;
+    guide.querySelector('small').textContent=guideInfo.text;
     section.querySelector('.subject-heading').appendChild(guide);
   }
   tests.filter(t=>t.subject===subject).forEach((t,i)=>{
@@ -57,6 +60,13 @@ function render(q,i,test,totalPoints){
     l.querySelector('input').addEventListener('change',()=>answer(i,j,c,test,totalPoints));
     o.appendChild(l);
   });
+  if(q.hint){
+    const hint=document.createElement('details');hint.className='solution hint';
+    hint.innerHTML='<summary>Показать подсказку</summary><div class="solution-text"></div>';
+    hint.querySelector('.solution-text').textContent=q.hint;
+    hint.addEventListener('toggle',()=>{hint.querySelector('summary').textContent=hint.open?'Скрыть подсказку':'Показать подсказку'});
+    c.querySelector('.solution-slot').appendChild(hint);
+  }
   if(q.solution){
     const details=document.createElement('details');details.className='solution';
     details.innerHTML='<summary>Показать решение</summary><div class="solution-text"></div>';
